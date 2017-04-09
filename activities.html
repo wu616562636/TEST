@@ -29,7 +29,9 @@
                 $(this).find(".back_icon").css("color","#fff");
                 $(this).parent().animate({"opacity":0},"slow",function () {
                     $(this).css("display","none");
-                })
+                });
+                $('html').removeClass('noscroll');
+                $(".overlay").css("display","none");
             });
 
 //            var img_height=$("#intro_module").width();
@@ -42,7 +44,10 @@
 //                console.log(1);
                 $(".back_icon").css("color",back_color);
                 $("#intro_module").css("display","block").animate({"opacity":1},"slow");
-            })
+                $('html').addClass('noscroll');
+                $(".overlay").css("display","block");
+            });
+
         })
     </script>
     <style>
@@ -57,6 +62,16 @@
         *{
             margin: 0;
             padding: 0;
+        }
+        .overlay {
+            position:fixed;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            z-index:5;
+            background: rgba(0,0,0,.3);
+            display: none;
         }
         body {
             position: relative;
@@ -184,11 +199,19 @@
             line-height: .5rem;
             text-align: center;
         }
+        .noscroll,
+        .noscroll body {
+            overflow: hidden;
+        }
+        .noscroll body {
+            position: relative;
+        }
 
 
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
     <div id="intro_module">
         <div class="item_intro">
             <img src="background.png" alt="pic" class="item_pic">
