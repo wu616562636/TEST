@@ -32,8 +32,11 @@
                 })
             });
 
-
-
+//            var img_height=$("#intro_module").width();
+//            console.log(img_height);
+            $(".item_pic").css("height",function () {
+                return $("#intro_module").width()+"px";
+            });
 //            console.log(1);
             $(document).on('click','.map-item',function () {
 //                console.log(1);
