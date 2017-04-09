@@ -75,11 +75,11 @@
     <style>
         @font-face {
             font-family: 'iconfont';  /* project id 205279 */
-            src: url('//at.alicdn.com/t/font_3hz70ulmfh1wnrk9.eot');
-            src: url('//at.alicdn.com/t/font_3hz70ulmfh1wnrk9.eot?#iefix') format('embedded-opentype'),
-            url('//at.alicdn.com/t/font_3hz70ulmfh1wnrk9.woff') format('woff'),
-            url('//at.alicdn.com/t/font_3hz70ulmfh1wnrk9.ttf') format('truetype'),
-            url('//at.alicdn.com/t/font_3hz70ulmfh1wnrk9.svg#iconfont') format('svg');
+            src: url('//at.alicdn.com/t/font_m7xq7k5of57gy14i.eot');
+            src: url('//at.alicdn.com/t/font_m7xq7k5of57gy14i.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_m7xq7k5of57gy14i.woff') format('woff'),
+            url('//at.alicdn.com/t/font_m7xq7k5of57gy14i.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_m7xq7k5of57gy14i.svg#iconfont') format('svg');
         }
         *{
             margin: 0;
@@ -135,6 +135,116 @@
             font-size: .2rem;
             margin-bottom: .1rem;
         }
+        #address {
+            border: 0;
+            outline: 0;
+            border-bottom: .02rem solid #ccc;
+            background: inherit;
+            height: .3rem;
+            font-size: .16rem;
+        }
+        #province {
+            background: inherit;
+            height: .3rem;
+            font-size: .16rem;
+        }
+        .words_title {
+            display: block;
+            margin-left: .3rem;
+            font-size: .2rem;
+            margin-top: .15rem;
+            margin-bottom: .05rem;
+        }
+        #words {
+            resize: none;
+            background: inherit;
+            height: 1.2rem;
+            width: 2.4rem;
+            margin-left: 8%;
+            border: .02rem solid #ccc;
+            border-radius: .15rem;
+            padding: .1rem .1rem;
+            font-size: .2rem;
+        }
+        .words span {
+            font-size: .18rem;
+        }
+        .words img {
+            width: 1.3rem;
+            margin-bottom: -.1rem;
+        }
+        .price {
+            position: relative;
+            background: #ccc;
+            padding: .05rem 0;
+            height: .45rem;
+            margin-top: .2rem;
+        }
+        .unit_price {
+            display: inline-block;
+            margin-left: .2rem;
+            vertical-align: top;
+            height: 100%;
+            width: 42%;
+            color: rgb(106,106,106);
+        }
+        .carriage {
+            margin-bottom: .03rem;
+        }
+        .sum_price {
+            position: absolute;
+            right: .06rem;
+            display: inline-block;
+            vertical-align: top;
+            /*width: 46%;*/
+            height: 100%;
+        }
+        .sum_text {
+            height: .45rem;
+            line-height: .45rem;
+            color: #fff;
+            font-size: .18rem;
+        }
+        .back,.pay {
+            display: inline-block;
+            vertical-align: top;
+            border: 0;
+            outline: 0;
+            height: .5rem;
+            width: 35%;
+            margin-left: .25rem;
+            color: #fff;
+            border-radius: .05rem;
+            font-size: .23rem;
+        }
+        .back {
+            background: rgb(255,59,47);
+        }
+        .pay {
+            background: rgb(0,122,255);
+            margin-left:.3rem;
+        }
+        .back_icon,.pay_icon {
+            display: inline-block;
+            font-family: iconfont;
+            vertical-align: top;
+            margin-right: .05rem;
+        }
+        .back_icon {
+            font-size: .25rem;
+        }
+        .back_text, .pay_text {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .pay_bar {
+            padding-top: .1rem;
+            padding-bottom: .2rem;
+            background: inherit;
+        }
+
+
     </style>
 </head>
 <body>
@@ -163,5 +273,24 @@
         <input type="text" id="address">
     </div>
 
+    <div class="words">
+        <label for="words" class="words_title"><span>妈妈，我想对你说</span><img src="pen.png" alt=""></label>
+        <textarea name="words" id="words"></textarea>
+    </div>
+
+    <div class="price">
+        <div class="unit_price">
+            <p class="carriage">快递运费：<span id="carriage">0</span>元</p>
+            <p class="present_price">礼物订单：<span id="present_price">12</span>元</p>
+        </div>
+        <div class="sum_price">
+            <p class="sum_text">订单合计：<span id="sum_price">2331</span>元</p>
+        </div>
+    </div>
+
+    <div class="pay_bar">
+        <button class="back"><span class="back_icon">&#xe650;</span><span class="back_text">返回</span></button>
+        <button class="pay"><span class="pay_icon">&#xe629;</span><span class="pay_text">付款</span></button>
+    </div>
 </body>
 </html>
