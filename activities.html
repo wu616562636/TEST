@@ -30,7 +30,7 @@
                 $(this).parent().animate({"opacity":0},"slow",function () {
                     $(this).css("display","none");
                 });
-//                $('html').removeClass('noscroll');
+                $('html').removeClass('noscroll');
                 $(".overlay").css("display","none");
             });
 
@@ -44,7 +44,7 @@
 //                console.log(1);
                 $(".back_icon").css("color",back_color);
                 $("#intro_module").css("display","block").animate({"opacity":1},"slow");
-//                $('html').addClass('noscroll');
+                $('html').addClass('noscroll');
                 $(".overlay").css("display","block");
             });
 
@@ -72,6 +72,7 @@
             z-index:5;
             background: rgba(0,0,0,.3);
             display: none;
+            filter: blur(3px);
         }
         body {
             position: relative;
@@ -200,13 +201,13 @@
             line-height: .5rem;
             text-align: center;
         }
-        /*.noscroll,*/
-        /*.noscroll body {*/
-            /*overflow: hidden;*/
-        /*}*/
-        /*.noscroll body {*/
-            /*position: relative;*/
-        /*}*/
+        .noscroll,
+        .noscroll body {
+            overflow: hidden;
+        }
+        .noscroll body {
+            position: relative;
+        }
 
 
     </style>
